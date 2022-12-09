@@ -1,11 +1,11 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {AllocationForm} from './src/components';
-import {Budget} from './src/components';
-import {ExpenseItem} from './src/components';
-import {ExpenseList} from './src/components';
-import {ExpenseTotal} from './src/components';
-import {Remaining} from '.src/components'
+import AllocationForm from './components/AllocationForm';
+import Budget from './components/Budget';
+import ExpenseItem from './components/ExpenseItem';
+import ExpenseList from './components/ExpenseList';
+import ExpenseTotal from './components/ExpenseTotal';
+import Remaining from './components/Remaining';
 
 // Add code to import the components
 import { AppProvider } from './context/AppContext';
@@ -13,7 +13,9 @@ const App = () => {
     return (
         <AppProvider>
             <div className='container'>
-                {AllocationForm, Budget, ExpenseItem,ExpenseList, ExpenseTotal, Remaining}
+                <Budget /> <Remaining />  <ExpenseTotal />
+                <ExpenseItem/> <ExpenseList/> <AllocationForm/>
+                                    
             </div>
         </AppProvider>
     );
