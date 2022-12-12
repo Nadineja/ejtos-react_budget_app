@@ -13,9 +13,15 @@ const App = () => {
     return (
         <AppProvider>
             <div className='container'>
-                <Budget /> <Remaining />  <ExpenseTotal />
+                <header>
+                    <h1>Company"s Budget Allocation</h1>
+                </header>
+                <div class = "d-flex bd-highlight"> 
+                    <div class="p-2 flex-grow-1 bd-highlight"><Budget /></div>
+                    <div class="p-2 flex-grow-1 bd-highlight"><Remaining /></div>
+                    <div class="p-2 flex-grow-1 bd-highlight"><ExpenseTotal /></div> 
+                </div>             
                 <ExpenseItem/> <ExpenseList/> <AllocationForm/>
-                                    
             </div>
         </AppProvider>
     );
