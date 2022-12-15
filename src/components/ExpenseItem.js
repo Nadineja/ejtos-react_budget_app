@@ -72,7 +72,8 @@ const ExpenseItem = (props) => {
                 <td><div class="btn-container decrease" onClick={(event) => decreaseAllocation(props.name) }><h1>-</h1></div>
                 </td>
                 <td>
-                    <TiDelete size='1.5em' onClick={handleDeleteExpense}></TiDelete></td>
+                    <TiDelete size='1.5em' onClick={handleDeleteExpense}></TiDelete>
+                </td>
              </tr>
         </>
      );

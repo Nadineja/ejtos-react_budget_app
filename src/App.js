@@ -21,11 +21,14 @@ const App = () => {
                     <div className="col-sm"><Budget /></div>
                     <div className="col-sm"><Remaining /></div>
                     <div class="col-sm"><ExpenseTotal /></div>
-                    <div class="col-sm"><AddCurrencies /></div>
+                    <div class="col-sm" style={{ alignItems:'left',height:60, backgroundColor: 'lightgrey', borderRadius: 5 }}><AddCurrencies /></div>
                     
-                </div>             
-                <ExpenseItem/> <ExpenseList/> <AllocationForm/>
-            </div>
+                </div> 
+                <h3 className='mt-3'>Allocation</h3>
+                    <ExpenseList />             
+                <h3 className='mt-3'>Change allocation</h3>
+                    <AllocationForm />
+             </div>
         </AppProvider>
     );
 };
