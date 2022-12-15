@@ -40,16 +40,16 @@ const AddCurrencies = () => {
         <>
             <style type="text/css">
                 {`
-        #dropdown-currency {
+            #dropdown-currency {
             background-color: #93E498;
             border: 1px solid gray;
-        }
-        .currency-menu {
-          background: #93E498;
-          border: 1px solid #3C783C;
-          text-color: black;
-        }
-      `}
+            }
+            .currency-menu {
+             background: #93E498;
+             border: 1px solid #3C783C;
+             text-color: black;
+            }
+      `     }
             </style>
             <Dropdown onSelect={(eventKey) => setCurrency(eventKey)}>
                 <Dropdown.Toggle variant="success" id="dropdown-currency">

@@ -6,6 +6,7 @@ import ExpenseItem from './components/ExpenseItem';
 import ExpenseList from './components/ExpenseList';
 import ExpenseTotal from './components/ExpenseTotal';
 import Remaining from './components/Remaining';
+import AddCurrencies from './components/AddCurrencies';
 
 // Add code to import the components
 import { AppProvider } from './context/AppContext';
@@ -13,13 +14,15 @@ const App = () => {
     return (
         <AppProvider>
             <div className='container'>
-                <header>
-                    <h1>Company"s Budget Allocation</h1>
-                </header>
-                <div class = "d-flex bd-highlight"> 
-                    <div class="p-2 flex-grow-1 bd-highlight"><Budget /></div>
-                    <div class="p-2 flex-grow-1 bd-highlight"><Remaining /></div>
-                    <div class="p-2 flex-grow-1 bd-highlight"><ExpenseTotal /></div> 
+                
+                <h1 className= 'mt-3'>Company"s Budget Allocation</h1>
+            
+                <div className = "row mt-3"> 
+                    <div className="col-sm"><Budget /></div>
+                    <div className="col-sm"><Remaining /></div>
+                    <div class="col-sm"><ExpenseTotal /></div>
+                    <div class="col-sm"><AddCurrencies /></div>
+                    
                 </div>             
                 <ExpenseItem/> <ExpenseList/> <AllocationForm/>
             </div>
