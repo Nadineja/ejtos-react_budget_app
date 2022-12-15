@@ -1,36 +1,43 @@
 import React, {useState, useContext } from 'react';
 import { AppContext } from '../context/AppContext';
-import BudgetUpdate from './BudgetUpdate';
-import ViewBudget from './ViewBudget'
-export default Budget;
+
 
 const Budget = () => {
-    const { budget } = useContext(AppContext);
-    const increaseBudget = () => {
-        budget.reduce((budget, cost) => {
-            return (total += cost)
-        })
-    }
-    dispatch({
-        type: 'SET_BUDGET',
-        payload: budget
-    });
+    const { budget, dispatch, expenses, currency } = useContext(AppContext);
 
-    const decreaseBudget = () => {
-        const budget = {
-            cost: 10,
+    const totalExpenses = expenses.reduce((total, item) => {
+        return (total += item.cost);
+    }, 0);
+
+    const setBudget = (newBudget) => {
+        if (newBudget < totalExpenses) {
+            alert(
+                "You cannot reduce the budget value lower than the current spendings."
+            );
+        } else {
+            if (newBudget <= 20000) {
+                // Dispatches a new event to the AppContext to change the budget.
+                dispatch({
+                    type: "SET_BUDGET",
+                    payload: newBudget,
+                });
+            }
         }
-        dispatch({
-            type: 'SET_BUDGET',
-            payload: budget
-        });
-        return (
-            <div className='alert alert-secondary'>
-                <span>Budget: £{props.budget}</span>
-                <button onClick={event => increaseBudget(props.budget)}>+</button>
-                <button onClick={event => decreaseBudget(props.budget)}>-</button>
-            </div>
-        );
-
     };
-}
+
+    return (
+        <div className="alert alert-secondary">
+            <span>
+                Budget: {currency}
+                <input
+                    type="number"
+                    value={budget}
+                    step="10"
+                    onChange={(e) => setBudget(e.target.value)}
+                ></input>
+            </span>
+        </div>
+    );
+};
+
+export default Budget;
